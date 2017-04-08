@@ -1,0 +1,279 @@
+*{
+    margin:0;
+    padding: 0;
+}
+html{
+    font-size: 20px;
+    font-family: monospace;
+    background-color: black; /* #42484d; */
+}
+
+body{
+    margin: .1em;
+    padding: .1em;
+   /* overflow: hidden;*/
+}
+
+.gametitle{
+    /*position: absolute;*/
+    text-align: center;
+    color: rgb(209, 209, 9);
+}
+
+.gametitle:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.wrapper{
+    box-sizing: border-box;
+    position: relative;
+    width: 60em;
+    
+    display: flex;
+    
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    /*border:.1em solid white;*/
+        
+}
+.top{
+    box-sizing: border-box;
+    width:100%;
+    height: 9.5em;
+    
+}
+
+.left{
+    box-sizing: border-box;
+    width:60%;
+    height: 70%;
+    
+    order:1;
+    flex-grow: 1;
+}
+
+.right{
+    box-sizing: border-box;
+    width:20%;
+    height:70%;
+    
+    order:2;
+    flex-grow: 1;
+}
+
+
+
+
+.licznik{
+
+    color:#FAE6BD;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.alfabet{
+    position: relative;
+    color: white;
+    width: 20em;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start ;
+    align-content:flex-start;
+    align-items:flex-start;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+}
+
+.row-alpha, .wybrana-litera {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    border-radius: .53em;
+    font-size: 1.2em;
+    padding:.5em .81em;
+    border: .05em solid #860e0e;
+    text-align: center;
+    vertical-align: center;
+    margin:.2em;
+    box-shadow: 0.2em 0.2em 0.2em #780D0D;
+    background-color: #282727;
+
+}
+
+.wybrana-litera{
+    background-color: #579183;
+}
+
+
+ul .row-alpha:nth-child(n):hover {
+    cursor: pointer;
+    background-color: #860e0e;
+    overflow: hidden;
+    border-radius: .53em;
+}
+
+.slowo{
+    box-sizing: border-box;
+    
+    padding: .6em;
+    font-size: 3em;
+    color: aliceblue;
+    height: 100%;
+    letter-spacing: .15em;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;    
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+    align-content: flex-end;
+    align-items: flex-end;
+    }
+
+
+.flex-item:nth-child(1) {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    }
+
+
+.container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+
+.btnReset{
+    margin: .6em;
+    padding: .4em;
+    color: white;
+    background-color: #4b2d05;
+    border: .2em solid #382104;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+.podsumowanie{
+    color: azure;
+    font-size: 1em;
+    
+}
+
+.powieszony{
+    position: absolute;
+    border: .01em solid #580b0b;
+    color: #e9fc08;
+    font-size: 3em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-content:center;
+    
+}
+
+.powieszony-me-modal .powieszony-section label {
+    display: block;
+    color: #637963;
+    margin: 10px;
+}
+
+.powieszony-me-modal .powieszony-section input {
+    width: 100%;
+    font-size: 18px;
+    line-height: 2;
+    text-shadow: .1px .1px 1px black;
+}
+
+
+.close-powieszony-btn {
+    background: #8A0808;
+    border-radius: .25em;
+    border-color: #610808;
+    width: 5em;
+    line-height: 2;
+    font-size: .3em;
+    color: #F1F485;
+}
+
+.powieszony-me-modal .powieszony-section div {
+    margin: .5em;
+}
+
+body::after{
+    content: "";
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0);
+    transition: background .2s;
+}
+
+
+body.modal-opened-powieszony::after{
+    background: rgba(0,0,0,0.6);
+    z-index: 0;
+
+}
+
+.modal-powieszony {
+    position: fixed;
+    z-index: -1;
+    background: #925879;
+    width: 11em;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%)  translateY(-50%);
+    padding: .25em;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.head-powieszony{
+    padding: 0 0 1em 0;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.modal-opened-powieszony .modal-powieszony {
+    opacity: 1;
+    z-index: 999;
+}
+
+.powieszony-section{
+    background: #D373CD;
+    padding: 10px;
+    display: inline-block;
+}
+
+.tekstKomunikatu{
+    background: #4C7F40;
+    width: 7em;
+    padding: 1em;
+    border-radius: .8em;
+    text-transform: uppercase;
+    text-align: center;
+}
