@@ -103,42 +103,61 @@ function wylosowaneSlowo(){
     'kreska',
     'zamieszanie'
 ];*/
-
+ 
 var slownik =[
         {
             sl:'jabłko',
             gt:'owoc',
-            pt:1            
+            pt:1,
+            typ:1
         },
         {
             sl:'gruszka',
             gt:'owoc',
-            pt:1            
+            pt:1,
+            typ:1
         },
         {
             sl:'śliwka',
             gt:'owoc',
-            pt:1            
+            pt:1,
+            typ:1
         },
         {
             sl:'Messi',
             gt:'piłkarz',
-            pt:1            
+            pt:1,
+            typ:3
         },
         {
             sl:'garnek',
             gt:'przedmiot z kuchni',
-            pt:1            
+            pt:1,
+            typ:2
         },
         {
             sl:'Lewandowski',
             gt:'piłkarz',
-            pt:1            
+            pt:1,
+            typ:3
         },
         {
             sl:'Argentyna',
             gt:'kraj w Ameryce płd.',
-            pt:1            
+            pt:1,
+            typ:1
+        },
+        {
+            sl:'home',
+            gt:'dom - przetłumacz na angielski',
+            pt:1,
+            typ:4
+        },
+        {
+            sl:'dom',
+            gt:'home - przetłumacz na polski',
+            pt:1,
+            typ:5
         }
     ];
 
