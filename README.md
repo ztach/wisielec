@@ -13,8 +13,8 @@ do zrobienia:
 ###### 2. przeniesienie słownika słów do pliku JSON
 
 teraz jest tak:
-
-```var slownik =[
+```
+var slownik =[
         {
             sl:'jabłko',
             gt:'owoc',
@@ -22,8 +22,6 @@ teraz jest tak:
             typ:1
         }...]
 ```
-
 chciałbym żeby było poberane z pliku JSON.
-
 
 #### obrazki z wisielcem pochodzą z kursu Mirosława Zelenta
