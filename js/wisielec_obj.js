@@ -23,7 +23,7 @@ function rysujWisielca(){
 	if ( licznikKlikniec < maxKlik ) {
     	licznik.innerHTML =  "<img src=\"img\/s"+ (licznikKlikniec) + ".jpg\" alt=\"rysunek wisielca\">";
         
-    	podsumowanie.innerHTML = "wykonałeś " +(licznikKlikniec + 1)+ " ruch ";
+    	podsumowanie.innerHTML = "wykonałeś " +(licznikKlikniec + 1)+ " błędny ruch ";
 	} 
     
     if (licznikKlikniec == maxKlik-1 ) {
@@ -93,7 +93,7 @@ alfabet.innerHTML = s;
 wypiszWszystkieLitery();
 
 function wylosowaneSlowo(){
-var slownik = [
+/*var slownik = [
     'jabłko',
     'gruszka',
     'wiśnia',
@@ -102,10 +102,71 @@ var slownik = [
     'rysunek',
     'kreska',
     'zamieszanie'
-];
+];*/
+ 
+var slownik =[
+        {
+            sl:'jabłko',
+            gt:'owoc',
+            pt:1,
+            typ:1
+        },
+        {
+            sl:'gruszka',
+            gt:'owoc',
+            pt:1,
+            typ:1
+        },
+        {
+            sl:'śliwka',
+            gt:'owoc',
+            pt:1,
+            typ:1
+        },
+        {
+            sl:'Messi',
+            gt:'piłkarz',
+            pt:1,
+            typ:3
+        },
+        {
+            sl:'garnek',
+            gt:'przedmiot z kuchni',
+            pt:1,
+            typ:2
+        },
+        {
+            sl:'Lewandowski',
+            gt:'piłkarz',
+            pt:1,
+            typ:3
+        },
+        {
+            sl:'Argentyna',
+            gt:'kraj w Ameryce płd.',
+            pt:1,
+            typ:1
+        },
+        {
+            sl:'home',
+            gt:'dom - przetłumacz na angielski',
+            pt:1,
+            typ:4
+        },
+        {
+            sl:'dom',
+            gt:'home - przetłumacz na polski',
+            pt:1,
+            typ:5
+        }
+    ];
 
-var losujSlowo = Math.floor(Math.random()*slownik.length);
-var wylosowaneSlowo = slownik[losujSlowo].toUpperCase();
+var losujId = Math.floor(Math.random()*slownik.length),
+    wylosowaneSlowo = slownik[losujId].sl.toUpperCase(),
+    wylosowanaPodpowiedz = slownik[losujId].gt,
+    sciaga = document.querySelector('.sciaga');
+    sciaga.innerHTML = wylosowanaPodpowiedz;
+    
     
 return {
     kreski: zamienSlowoNaKreski(wylosowaneSlowo),
@@ -137,7 +198,7 @@ for (var i=0;i<rowAlpha.length;i++){
 
 function nasluchKlikniecia(e){
 var w = {
-      kliknietaLitera:e.srcElement.innerHTML,
+      kliknietaLitera:e.target.firstChild.nodeValue,
       id:e.target.id
       };
 
