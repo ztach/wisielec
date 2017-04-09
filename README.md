@@ -7,11 +7,8 @@ Za nieprawidłową literę pojwiają się elementy wisieleca.
 Gra kończy się gdy ułożysz słowo lub wisielca.
 ```
 do zrobienia:
-
-###### 1. wybór kategorii losowanych słów.
-
-###### 2. przeniesienie słownika słów do pliku JSON
-
+1. wybór kategorii losowanych słów.
+2. przeniesienie słownika słów do pliku JSON
 teraz jest tak:
 ```
 var slownik =[
