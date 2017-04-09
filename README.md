@@ -1,4 +1,4 @@
-# wisielec
+# wisielec (hanged man)
 
 Gra polega na odgadywaniu słowa ukrytego za kreskami.
 
