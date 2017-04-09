@@ -170,10 +170,8 @@ var slownik =[
 var losujId = Math.floor(Math.random()*slownik.length),
     wylosowaneSlowo = slownik[losujId].sl.toUpperCase(),
     wylosowanaPodpowiedz = slownik[losujId].gt,
-    sciaga = document.querySelector('.sciaga'),
-    wynik = document.querySelector('.head-powieszony');
+    sciaga = document.querySelector('.sciaga');
 
-    wynik.innerHTML = wylosowaneSlowo;
     sciaga.innerHTML = wylosowanaPodpowiedz;
     
     
@@ -182,7 +180,7 @@ return {
     slowo: wylosowaneSlowo
     };
 
-};
+}
 
 
 function zamienSlowoNaKreski(s){
@@ -206,7 +204,6 @@ for (var i=0;i<rowAlpha.length;i++){
 }
 
 function nasluchKlikniecia(e){
-    console.log(e);
 var w = {
       kliknietaLitera:e.target.firstChild.nodeValue,
       id:e.target.id
@@ -234,6 +231,9 @@ var w = {
 
 
     if (slowoZ.koniec){
+    var wynik = document.querySelector('.head-powieszony');
+        wynik.innerHTML = wylSlowo.slowo;
+        
         document.body.classList.add("modal-opened-powieszony");
         tekstKomunikatu.innerHTML =  "wwyy.....<br/>";
         tekstKomunikatu.innerHTML += "grrraaa..<br/>";
@@ -275,9 +275,9 @@ function sprawdzSlowo(sl,l){
 
 wisielec();
 
-var closePromocjaBtn = document.querySelector(".modal-powieszony .close-powieszony-btn");
+var closePowBtn = document.querySelector(".close-powieszony-btn");
 
-closePromocjaBtn.addEventListener("click",function () {
+closePowBtn.addEventListener("click",function () {
     document.body.classList.remove("modal-opened-powieszony");
     wisielec();
 },false);
