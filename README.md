@@ -20,7 +20,8 @@ teraz jest tak:
             gt:'owoc',
             pt:1,
             typ:1
-        }...]```
+        }...]
+```
 
 chciałbym żeby było poberane z pliku JSON.
 
