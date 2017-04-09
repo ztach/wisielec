@@ -8,7 +8,8 @@ Gra kończy się gdy ułożysz słowo lub wisielca.
 ```
 do zrobienia:
 1. wybór kategorii losowanych słów.
-2. przeniesienie słownika słów do pliku JSON
+2. obsługa klawiatury.
+3. przeniesienie słownika słów do pliku JSON
 teraz jest tak:
 
 var slownik =[
@@ -19,6 +20,6 @@ var slownik =[
             typ:1
         }...]
 
-chciałbym żeby było poberane z pliku JSON.
+chciałbym żeby było pobierane z pliku JSON.
 ```
 #### obrazki z wisielcem pochodzą z kursu Mirosława Zelenta
