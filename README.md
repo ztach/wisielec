@@ -6,4 +6,4 @@ Za nieprawidłową literę pojwiają się elementy wisieleca.
 
 Gra kończy się gdy ułożysz słowo lub wisielca.
 
-#### zjęcia pochodzą z kursu Mirosława Zelenta
+#### obrazki z wisielcem pochodzą z kursu Mirosława Zelenta
