@@ -14,13 +14,13 @@ do zrobienia:
 
 teraz jest tak:
 
-var slownik =[
+```var slownik =[
         {
             sl:'jabłko',
             gt:'owoc',
             pt:1,
             typ:1
-        }...]
+        }...]```
 
 chciałbym żeby było poberane z pliku JSON.
 
