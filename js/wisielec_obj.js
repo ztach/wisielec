@@ -29,7 +29,7 @@ function rysujWisielca(){
     if (licznikKlikniec == maxKlik-1 ) {
 		//powieszony.innerHTML = "powiesiłeś wisielca";
         document.body.classList.add("modal-opened-powieszony");
-        tekstKomunikatu.innerHTML = "powiesiłeś wisielca!!!";
+        tekstKomunikatu.innerHTML = "nie udało się odgadnąć!!!";
 
 	} 
     
@@ -136,7 +136,13 @@ var slownik =[
             typ:2
         },
         {
-            sl:'Lewandowski',
+            sl:'Robert Lewandowski',
+            gt:'piłkarz',
+            pt:1,
+            typ:3
+        },
+        {
+            sl:'pele',
             gt:'piłkarz',
             pt:1,
             typ:3
@@ -164,7 +170,10 @@ var slownik =[
 var losujId = Math.floor(Math.random()*slownik.length),
     wylosowaneSlowo = slownik[losujId].sl.toUpperCase(),
     wylosowanaPodpowiedz = slownik[losujId].gt,
-    sciaga = document.querySelector('.sciaga');
+    sciaga = document.querySelector('.sciaga'),
+    wynik = document.querySelector('.head-powieszony');
+
+    wynik.innerHTML = wylosowaneSlowo;
     sciaga.innerHTML = wylosowanaPodpowiedz;
     
     
@@ -194,9 +203,10 @@ var slowoKr = document.querySelector('.slowo');
 var rowAlpha = document.getElementsByTagName('li');
 for (var i=0;i<rowAlpha.length;i++){
     rowAlpha[i].onmousedown = nasluchKlikniecia;
-};
+}
 
 function nasluchKlikniecia(e){
+    console.log(e);
 var w = {
       kliknietaLitera:e.target.firstChild.nodeValue,
       id:e.target.id
@@ -230,7 +240,7 @@ var w = {
         tekstKomunikatu.innerHTML += "nnaaaa!!!";
     }
     
-};
+}
 
 
 
@@ -257,7 +267,7 @@ function sprawdzSlowo(sl,l){
             slowo: k,
             isFind: isFind,
             koniec: (s === test? true : false)
-            }
+            };
 }
 
 
