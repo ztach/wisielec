@@ -4,11 +4,12 @@ var wisielec = function(){
 
  	ktoraGra++;
 
-var podsumowanie = document.querySelector('.podsumowanie');
+var podsumowanie = document.querySelector('.podsumowanie'),
+    powieszony = document.querySelector('.powieszony'),
+    licznik = document.querySelector('.licznik'),
+    wynik = document.querySelector('.head-powieszony');
+        
 
-var powieszony = document.querySelector('.powieszony');
-
-var licznik = document.querySelector('.licznik');
 
 var licznikKlikniec = 0;
 var maxKlik = 10;
@@ -38,7 +39,7 @@ function rysujWisielca(){
 		licznikKlikniec = -1;
 	}
 	return licznikKlikniec++;
-};
+}
 
 var alfabet = document.querySelector('.alfabet');
 
@@ -69,7 +70,7 @@ function wypiszAlfabet(){
 		tab:t,
 		len: t.length
 	};
-};
+}
 
 function wypiszWszystkieLitery(){
 var alph = wypiszAlfabet();
@@ -88,22 +89,12 @@ for (var i=0; i<alph.len;i++){
 	}
 }
 alfabet.innerHTML = s;
-};
+}
 
 wypiszWszystkieLitery();
 
 function wylosowaneSlowo(){
-/*var slownik = [
-    'jabłko',
-    'gruszka',
-    'wiśnia',
-    'dżem truskawkowy',
-    'antoni',
-    'rysunek',
-    'kreska',
-    'zamieszanie'
-];*/
- 
+
 var slownik =[
         {
             sl:'jabłko',
@@ -167,6 +158,50 @@ var slownik =[
         }
     ];
 
+
+/*
+var inputList = document.querySelector('input[list]'),
+    wybrano;
+
+inputList.addEventListener('input', function(e) {
+    var input = e.target,
+        list = input.getAttribute('list'),
+        options = document.querySelectorAll('#' + list + ' option'),
+        hiddenInput = document.getElementById('answerInput-hidden'),
+        inputValue = input.value;
+
+    hiddenInput.value = inputValue;
+
+    for(var i = 0; i < options.length; i++) {
+        var option = options[i];
+
+        if(option.innerText === inputValue) {
+            hiddenInput.value = option.getAttribute('data-value');
+
+            wybrano = { 
+                    tekst:inputValue,
+                    id:hiddenInput.value
+                };
+            break;
+        }
+    }
+    
+
+    var wybierzSlowa = function(){
+        var listaSlow=[];
+        for (var i = 0; i < slownik.length; i++){
+            if (slownik[i].typ == wybrano.id){
+                listaSlow.push(slownik[i].sl);
+            }
+        }
+        return listaSlow;
+    };
+
+    var listaSlow = wybierzSlowa();
+  
+});
+*/
+
 var losujId = Math.floor(Math.random()*slownik.length),
     wylosowaneSlowo = slownik[losujId].sl.toUpperCase(),
     wylosowanaPodpowiedz = slownik[losujId].gt,
@@ -203,12 +238,14 @@ for (var i=0;i<rowAlpha.length;i++){
     rowAlpha[i].onmousedown = nasluchKlikniecia;
 }
 
-function nasluchKlikniecia(e){
-var w = {
+
+var nasluchKlikniecia = function (e){
+    var w = {
       kliknietaLitera:e.target.firstChild.nodeValue,
       id:e.target.id
       };
 
+   
     var zaznaczKliknieta = document.querySelector('#'+w.id);
     
     zaznaczKliknieta.setAttribute("class", "wybrana-litera");
@@ -229,22 +266,19 @@ var w = {
     wylSlowo.kreski = slowoZ.slowo;
 	slowo.innerHTML = wylSlowo.kreski ;
 
+    wynik.innerHTML = wylSlowo.slowo;
 
     if (slowoZ.koniec){
-    var wynik = document.querySelector('.head-powieszony');
-        wynik.innerHTML = wylSlowo.slowo;
-        
         document.body.classList.add("modal-opened-powieszony");
-        tekstKomunikatu.innerHTML =  "wwyy.....<br/>";
-        tekstKomunikatu.innerHTML += "grrraaa..<br/>";
-        tekstKomunikatu.innerHTML += "nnaaaa!!!";
+        tekstKomunikatu.innerHTML =  "gratulacje<br/>";
+        tekstKomunikatu.innerHTML += "dobry wybór";
     }
     
 }
 
 
 
-function sprawdzSlowo(sl,l){
+var sprawdzSlowo = function (sl,l){
     var a ='',
         s = sl.slowo,
         k = sl.kreski,

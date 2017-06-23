@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wisielec</title>
+    <link rel="stylesheet" href="css/boksy.css">
+    <link rel="stylesheet" href="css/loader-wrapper.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stopka.css">
+    <link rel="stylesheet" href="css/powieszony-modal.css">
+    <link rel="stylesheet" href="css/top-menu.css">
+    
+</head>
+<body>
+
+<div id="loader-wrapper">
+    <div class="load">
+      <hr/><hr/><hr/><hr/>
+    </div>
+</div>
+
+<div class="wrapper">
+
+  <div class="header">
+    <h1 class="gametitle">WISIELEC</h1>
+      <div class="przyciski">
+          <button class="btnReset">NOWA GRA</button> 
+
+           <input type="tekst" list="typPytania" class="getTypeGame" placeholder="kliknij dwukrotnie">
+              <datalist id="typPytania">
+                <option data-value="1">Owoce</option>
+                <option data-value="2">Przedmiot z kuchni</option>
+                <option data-value="3">Piłkarz</option>
+                <option data-value="4">pl->en</option>
+                <option data-value="5">en->pl</option>
+              </datalist>
+          <input type="hidden" name="answer" id="answerInput-hidden">
+      </div>
+
+  </div>
+
+  <div class="header2">
+
+    <div id="napis" class="top-box">
+        <div class="slowo"></div>
+    </div>
+
+  </div>
+
+  <div class="sidebar">
+ 
+     <!-- <div id="wisielec" class="left-box"></div> -->
+    
+     <div class="licznik"></div>
+
+  </div>
+
+  <div class="sidebar2">
+
+    <div id="litery" class="right-box">
+      <ul class="alfabet"></ul>
+    </div>
+
+
+  </div>
+
+  <div class="footer">
+  <div class="groupline">
+    <div class="podsumowanie">x</div>  
+    <div class="sciaga"></div>
+  </div>
+  </div>
+
+  <div class="footer2">
+  <nav class="page-nav">
+    <ul class="menu">
+      <li><a class="menu-href menu-about" href="omnie.html">O mnie</a></li>
+      <li><a class="menu-href"  href="slownik.html">Przegląd słownika</a></li>
+      <li><a class="menu-href"  href="#">Uzupełnianie słownika</a></li>
+      <li><a class="menu-href"  href="#">Contact</a></li>
+    </ul>
+  </nav>
+  </div>
+</div>
+
+
+<div class="powieszony">
+
+    <div class="modal-powieszony powieszony-me-modal">
+        <h1 class="head-powieszony">wynik</h1>
+
+        <button class="close-powieszony-btn">zamknij</button>
+        <div class="tekstKomunikatu"></div>
+    </div>
+
+</div>
+
+
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script>
+ 
+$(window).load(function() {
+    setTimeout(
+        function() {
+            $("#loader-wrapper").fadeOut();
+        }, 30);
+});
+ 
+</script>
+<!-- 
+ <script  type="text/javascript"  src="js/slownik.js" ></script>
+ <script  type="text/javascript"  src="js/wypiszAlfabet.js" ></script>
+  --> 
+<script src="js/wisielec_obj.js" ></script>
+</body>
+</html>

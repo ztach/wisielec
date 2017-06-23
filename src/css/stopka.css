@@ -1,0 +1,18 @@
+
+.podsumowanie{
+    position: absolute;
+    box-sizing: border-box;    
+    color: azure;
+    font-size: 1em;
+    margin-left:1em;
+}
+
+.sciaga{
+    position: absolute;
+    right:0;
+    box-sizing: border-box;    
+    margin-right: 1em;
+    color: #9df7f7;
+    font-size: 1em;
+    text-align: right;
+}
